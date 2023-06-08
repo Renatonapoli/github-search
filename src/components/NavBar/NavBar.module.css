@@ -1,0 +1,25 @@
+header {
+  background: var(--gray-900);
+  display: flex;
+  justify-content: start;
+  height: 72px;
+  align-items: center;
+  padding-left: 16.25rem;
+}
+
+h1 {
+  color: var(--white);
+  margin-left: 1rem;
+}
+
+.icon {
+  width: 10px;
+  height: 28px;
+  margin-left: 1rem;
+}
+
+p {
+  font-weight: 300;
+  color: var(--white);
+  margin-left: 1.75rem;
+}
