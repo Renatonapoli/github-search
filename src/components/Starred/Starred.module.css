@@ -25,30 +25,24 @@
   color: var(--gray-900);
 }
 
-.containerStarsRamos {
+.containerRamos {
   display: flex;
   margin-top: 0.75rem;
 }
 
-.containerStarsRamos span {
+.containerRamos span {
   margin-top: 1.1rem;
 }
 
-.containerStarsRamos p {
+.containerRamos p {
   color: var(--gray-900);
-  margin-left: 0.75rem;
-}
-
-.starsQuantity {
-  display: flex;
-  align-items: center;
-}
-
-.starsQuantity p {
-  margin-left: 0.75rem;
 }
 
 .ramosQuantity {
   display: flex;
   margin-left: 2rem;
+}
+
+.ramosQuantity p {
+  margin-left: 0.25rem;
 }

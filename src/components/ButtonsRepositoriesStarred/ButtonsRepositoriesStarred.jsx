@@ -1,5 +1,6 @@
 import styles from "./ButtonsRepositoriesStarred.module.css"
-
+//import { Repositories } from "../Repositories/Repositories"
+import { Starred } from "../Starred/Starred"
 export function ButtonsRepositoriesStarred() {
   return (
     <div>
@@ -15,6 +16,11 @@ export function ButtonsRepositoriesStarred() {
         </button>
         <span>12</span>
       </header>
+
+      <input className="input" type="text" />
+
+      {/* <Repositories /> */}
+      <Starred />
     </div>
   )
 }

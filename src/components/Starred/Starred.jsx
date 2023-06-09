@@ -1,6 +1,6 @@
-import styles from "./Repositories.module.css"
+import styles from "./Starred.module.css"
 
-export function Repositories() {
+export function Starred() {
   return (
     <div className={styles.containerRepositories}>
       <div className={styles.content}>
@@ -9,14 +9,9 @@ export function Repositories() {
         <p>Release</p>
       </div>
       <span>Node.js Foundation Release Working Group.</span>
-      <div className={styles.containerStarsRamos}>
-        <div className={styles.starsQuantity}>
-          <img
-            src="../../src/assets/icons/star-black.svg"
-            alt="Ícone estrela"
-          />
-          <p>1.569</p>
-        </div>
+      <div className={styles.containerRamos}>
+        <p>C++</p>
+
         <div className={styles.ramosQuantity}>
           <img
             src="../../src/assets/icons/ramos.svg"
