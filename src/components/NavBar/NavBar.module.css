@@ -1,4 +1,4 @@
-header {
+.header {
   background: var(--gray-900);
   display: flex;
   justify-content: start;
@@ -7,7 +7,7 @@ header {
   padding-left: 16.25rem;
 }
 
-h1 {
+.header h1 {
   color: var(--white);
   margin-left: 1rem;
 }
@@ -18,7 +18,7 @@ h1 {
   margin-left: 1rem;
 }
 
-p {
+.header p {
   font-weight: 300;
   color: var(--white);
   margin-left: 1.75rem;

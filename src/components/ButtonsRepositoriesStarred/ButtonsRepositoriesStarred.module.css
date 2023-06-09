@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  margin-top: 2.8rem;
+}
+
+.header button {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  background: var(--white);
+  border: none;
+}
+
+.header button img {
+  margin-right: 1.1rem;
+}
+
+.header span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+  border-radius: 39%;
+}
+
+.buttonStarred {
+  margin-left: 4.19rem;
+}
