@@ -3,10 +3,24 @@ import styled from "styled-components"
 export const Header = styled.header`
   display: flex;
   margin-top: 2.8rem;
+
+  @media (max-width: 1200px) {
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 export const HandleSelectRepositories = styled.div`
   display: flex;
   flex-direction: column;
+`
+export const Container = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 export const ContainerSearchButtons = styled.div`
@@ -15,6 +29,11 @@ export const ContainerSearchButtons = styled.div`
 
   @media (max-width: 1200px) {
     flex-wrap: wrap-reverse;
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `
 
@@ -48,10 +67,21 @@ export const ButtonType = styled.button`
   @media (max-width: 1200px) {
     margin: 1.9rem 1rem 0 0;
   }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    margin: -3.4rem 1rem 3rem;
+  }
 `
 
 export const ButtonLanguage = styled(ButtonType)`
   width: 9rem;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    margin-left: 8rem;
+    margin-top: -5.9rem;
+  }
 `
 
 export const ButtonRepositories = styled.button`
@@ -99,6 +129,37 @@ export const Search = styled.input`
   height: 1.5rem;
   background-image: url(../../src/assets/icons/lupa.svg);
   background-repeat: no-repeat;
+
+  @media (max-width: 1200px) {
+    margin-top: 1.75rem;
+  }
+`
+export const Form = styled.form`
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+
+export const SearchMobile = styled.input`
+  display: flex;
+
+  width: 26rem;
+  height: 2.5rem;
+  border: none;
+  background: var(--gray-300);
+  border-radius: 8px;
+  padding: 2rem;
+  font-size: large;
+  outline: none;
+  text-align: right;
+
+  background-image: url(../../src/assets/icons/lupa.svg);
+  background-repeat: no-repeat;
+  background-position: 98%;
+
+  gap: 124px;
 
   @media (max-width: 1200px) {
     margin-top: 1.75rem;

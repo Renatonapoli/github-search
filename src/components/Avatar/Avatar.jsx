@@ -1,5 +1,6 @@
 //import styles from "./Avatar.module.css"
 
+import { useState } from "react"
 import {
   ContainerAvatar,
   AvatarTitleSubtitle,
@@ -12,9 +13,16 @@ import {
   Locale,
   Footer,
   Icons,
+  TitleInformation,
+  ButtonInformation,
+  ContentInformations,
 } from "./styles"
 
 export function Avatar() {
+  const [handleContentInformations, setHandleContentInformation] =
+    useState(false)
+  const contentInformation = () => setHandleContentInformation(true)
+
   return (
     <ContainerAvatar>
       <AvatarTitleSubtitle>
@@ -60,6 +68,39 @@ export function Avatar() {
           </span>
         </div>
       </Footer>
+      <TitleInformation>Informações adicionais</TitleInformation>
+      <ButtonInformation onClick={contentInformation}>
+        <img src="../../src/assets/icons/seta-para-baixo-blue.svg" />
+      </ButtonInformation>
+
+      <ContentInformations>
+        <div>
+          <Icons src="../../src/assets/icons/empresa.svg" alt="icone empresa" />
+          <span>Empresa</span>
+        </div>
+        <div>
+          <Icons
+            src="../../src/assets/icons/localidade.svg"
+            alt="icone localidade"
+          />
+          <span>Localidade</span>
+        </div>
+        <div>
+          <Icons src="../../src/assets/icons/link.svg" alt="icone link" />
+          <span>
+            <a href="#">Link</a>
+          </span>
+        </div>
+        <div>
+          <Icons
+            src="../../src/assets/icons/instagram.svg"
+            alt="icone instagram"
+          />
+          <span>
+            <a href="#">Instagram</a>
+          </span>
+        </div>
+      </ContentInformations>
     </ContainerAvatar>
   )
 }

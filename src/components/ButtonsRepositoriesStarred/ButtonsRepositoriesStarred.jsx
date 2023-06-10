@@ -9,6 +9,9 @@ import {
   ButtonStarred,
   SelectedSpanRepositories,
   SelectedSpanStarred,
+  SearchMobile,
+  Form,
+  Container,
 } from "./styles"
 import { Repositories } from "../Repositories/Repositories"
 //import { Starred } from "../Starred/Starred"
@@ -35,20 +38,33 @@ export function ButtonsRepositoriesStarred() {
           <SelectedSpanStarred />
         </HandleSelectRepositories>
       </Header>
+      <Container>
+        <ContainerSearchButtons>
+          <Search placeholder="Search Here " />
 
-      <ContainerSearchButtons>
-        <Search placeholder="Search Here " />
+          <ButtonType>
+            <img src="../../src/assets/icons/seta-para-baixo.svg" alt="" />
+            Type
+          </ButtonType>
 
-        <ButtonType>
-          <img src="../../src/assets/icons/seta-para-baixo.svg" alt="" />
-          Type
-        </ButtonType>
+          <ButtonLanguage>
+            <img src="../../src/assets/icons/seta-para-baixo.svg" />
+            Language
+          </ButtonLanguage>
+        </ContainerSearchButtons>
+        <Form>
+          <SearchMobile />
+          <ButtonType>
+            <img src="../../src/assets/icons/seta-para-baixo.svg" alt="" />
+            Type
+          </ButtonType>
 
-        <ButtonLanguage>
-          <img src="../../src/assets/icons/seta-para-baixo.svg" />
-          Language
-        </ButtonLanguage>
-      </ContainerSearchButtons>
+          <ButtonLanguage>
+            <img src="../../src/assets/icons/seta-para-baixo.svg" />
+            Language
+          </ButtonLanguage>
+        </Form>
+      </Container>
 
       <Repositories />
       {/* <Starred /> */}

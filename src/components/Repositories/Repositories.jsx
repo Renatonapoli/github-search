@@ -1,30 +1,36 @@
-import styles from "./Repositories.module.css"
+import {
+  ContainerRepositories,
+  Content,
+  ContainerStarsRamos,
+  StarQuantity,
+  RamosQuantity,
+} from "./styles"
 
 export function Repositories() {
   return (
-    <div className={styles.containerRepositories}>
-      <div className={styles.content}>
+    <ContainerRepositories>
+      <Content>
         <p>Node</p>
         <span>/</span>
         <p>Release</p>
-      </div>
+      </Content>
       <span>Node.js Foundation Release Working Group.</span>
-      <div className={styles.containerStarsRamos}>
-        <div className={styles.starsQuantity}>
+      <ContainerStarsRamos>
+        <StarQuantity>
           <img
             src="../../src/assets/icons/star-black.svg"
             alt="Ícone estrela"
           />
           <p>1.569</p>
-        </div>
-        <div className={styles.ramosQuantity}>
+        </StarQuantity>
+        <RamosQuantity>
           <img
             src="../../src/assets/icons/ramos.svg"
             alt="Ícone de ramificação"
           />
           <p>142</p>
-        </div>
-      </div>
-    </div>
+        </RamosQuantity>
+      </ContainerStarsRamos>
+    </ContainerRepositories>
   )
 }
