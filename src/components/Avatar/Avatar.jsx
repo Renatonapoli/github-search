@@ -30,7 +30,9 @@ export function Avatar() {
           src="../../src/assets/images/imageAvatar.svg"
           alt="Imagem do Avatar"
         />
-        <CircleIconAvatar />
+        <CircleIconAvatar>
+          <img src="../../src/assets/icons/smiles.svg" alt="" />
+        </CircleIconAvatar>
 
         <NameProfession>
           <ContainerNames>

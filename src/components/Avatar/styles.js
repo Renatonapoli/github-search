@@ -31,15 +31,20 @@ export const AvatarTitleSubtitle = styled.div`
 `
 
 export const CircleIconAvatar = styled.span`
-  margin-top: -2rem;
-  margin-left: 6rem;
-  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  margin-top: -2.8rem;
+  margin-left: 7.3rem;
+  padding: 0.7rem;
   border: 1px solid var(--whrite);
   border-radius: 50%;
-  background: var(--whrite);
+  background: var(--white);
 
   box-shadow: 0px 0px 16px rgba(79, 79, 80, 0.15);
-  transform: matrix(1, 0, 0, -1, 0, 0);
+
+  img {
+    width: 1.1rem;
+  }
 `
 
 export const NameProfession = styled.main`
