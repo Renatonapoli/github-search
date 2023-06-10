@@ -1,15 +1,15 @@
-import styles from "./NavBar.module.css"
+import { Header, Logo } from "./styles"
 
 import logo from "../../assets/images/logo.svg"
 import barra from "../../assets/icons/barra.svg"
 
 export function Navbar() {
   return (
-    <header className={styles.header}>
-      <img src={logo} alt="logo" />
+    <Header>
+      <Logo src={logo} alt="Ícnone logo" />
       <h1>GitHub</h1>
-      <img className={styles.icon} src={barra} alt="logo" />
+      <img src={barra} alt="icone barra" />
       <p>Profile</p>
-    </header>
+    </Header>
   )
 }

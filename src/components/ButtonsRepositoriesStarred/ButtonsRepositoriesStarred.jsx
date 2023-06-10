@@ -1,34 +1,57 @@
-import styles from "./ButtonsRepositoriesStarred.module.css"
-
-//import { Repositories } from "../Repositories/Repositories"
-import { Starred } from "../Starred/Starred"
+import {
+  ButtonType,
+  ButtonLanguage,
+  Search,
+  ContainerSearchButtons,
+  Header,
+  HandleSelectRepositories,
+  ButtonRepositories,
+  ButtonStarred,
+  SelectedSpanRepositories,
+  SelectedSpanStarred,
+} from "./styles"
+import { Repositories } from "../Repositories/Repositories"
+//import { Starred } from "../Starred/Starred"
 
 export function ButtonsRepositoriesStarred() {
   return (
     <div>
-      <header className={styles.header}>
-        <div className={styles.handleSelectRepositories}>
-          <button>
+      <Header>
+        <HandleSelectRepositories>
+          <ButtonRepositories>
             <img src="../../src/assets/icons/book.svg" />
             Repositories
             <p>81</p>
-          </button>
-          <span></span>
-        </div>
-        <div className={styles.handleSelectStarred}>
-          <button className={styles.buttonStarred}>
+          </ButtonRepositories>
+
+          <SelectedSpanRepositories />
+        </HandleSelectRepositories>
+        <HandleSelectRepositories>
+          <ButtonStarred>
             <img src="../../src/assets/icons/star.svg" />
             Starred
             <p>12</p>
-          </button>
-          <span></span>
-        </div>
-      </header>
+          </ButtonStarred>
+          <SelectedSpanStarred />
+        </HandleSelectRepositories>
+      </Header>
 
-      <input className="input" type="text" />
+      <ContainerSearchButtons>
+        <Search placeholder="Search Here " />
 
-      {/* <Repositories /> */}
-      <Starred />
+        <ButtonType>
+          <img src="../../src/assets/icons/seta-para-baixo.svg" alt="" />
+          Type
+        </ButtonType>
+
+        <ButtonLanguage>
+          <img src="../../src/assets/icons/seta-para-baixo.svg" />
+          Language
+        </ButtonLanguage>
+      </ContainerSearchButtons>
+
+      <Repositories />
+      {/* <Starred /> */}
     </div>
   )
 }

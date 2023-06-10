@@ -1,43 +1,57 @@
-import styles from "./Avatar.module.css"
+//import styles from "./Avatar.module.css"
+
+import {
+  ContainerAvatar,
+  AvatarTitleSubtitle,
+  AvatarImg,
+  CircleIconAvatar,
+  NameProfession,
+  ContainerNames,
+  MyName,
+  Profession,
+  Locale,
+  Footer,
+  Icons,
+} from "./styles"
 
 export function Avatar() {
   return (
-    <div className={styles.containerAvatar}>
-      <div className={styles.avatarTitleSubtitle}>
-        <img
+    <ContainerAvatar>
+      <AvatarTitleSubtitle>
+        <AvatarImg
           src="../../src/assets/images/imageAvatar.svg"
           alt="Imagem do Avatar"
         />
-        <span className={styles.circleIconAvatar}></span>
+        <CircleIconAvatar />
 
-        <main>
-          <div className={styles.nameTitles}>
-            <h1 className={styles.title}>Renato Napoli</h1>
-            <h4>Desenvolvedor Front-end Pleno</h4>
-            <h4>Magazord - Tagged</h4>
-          </div>
-        </main>
-      </div>
-      <footer>
+        <NameProfession>
+          <ContainerNames>
+            <MyName>Renato Napoli</MyName>
+            <Profession>Desenvolvedor Front-end Pleno</Profession>
+            <Locale>Magazord - Tagged</Locale>
+          </ContainerNames>
+        </NameProfession>
+      </AvatarTitleSubtitle>
+      <Footer>
         <div>
-          <img src="../../src/assets/icons/empresa.svg" alt="icone empresa" />
+          <Icons src="../../src/assets/icons/empresa.svg" alt="icone empresa" />
           <span>Empresa</span>
         </div>
         <div>
-          <img
+          <Icons
             src="../../src/assets/icons/localidade.svg"
             alt="icone localidade"
           />
           <span>Localidade</span>
         </div>
         <div>
-          <img src="../../src/assets/icons/link.svg" alt="icone link" />
+          <Icons src="../../src/assets/icons/link.svg" alt="icone link" />
           <span>
             <a href="#">Link</a>
           </span>
         </div>
         <div>
-          <img
+          <Icons
             src="../../src/assets/icons/instagram.svg"
             alt="icone instagram"
           />
@@ -45,7 +59,7 @@ export function Avatar() {
             <a href="#">Instagram</a>
           </span>
         </div>
-      </footer>
-    </div>
+      </Footer>
+    </ContainerAvatar>
   )
 }
