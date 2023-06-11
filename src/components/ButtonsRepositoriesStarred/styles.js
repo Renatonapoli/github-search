@@ -89,6 +89,8 @@ export const ButtonRepositories = styled.button`
   align-items: center;
   padding: 0.25rem;
   background: var(--white);
+  color: var(--gray-900);
+
   border: none;
 
   img {

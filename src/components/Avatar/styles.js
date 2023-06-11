@@ -4,23 +4,26 @@ export const ContainerAvatar = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2.5rem;
-  margin-left: 17.25rem;
+  margin-left: 22rem;
   margin-right: 8rem;
 
   @media (max-width: 1438px) {
     margin-left: 1.5rem;
   }
 
-  @media (max-width: 864px) {
+  @media (max-width: 868px) {
     margin-left: 0;
-    margin-right: 0;
-    justify-content: center;
+
+    margin-right: 0rem;
+
     align-items: center;
   }
 `
 
 export const AvatarImg = styled.img`
-  padding: 9.75;
+  width: 9.4rem;
+  height: 9.4rem;
+
   border-radius: 50%;
 `
 
@@ -55,6 +58,7 @@ export const ContainerNames = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 15.8rem;
 
   @media (max-width: 1344px) {
     width: 15.5rem;
@@ -114,6 +118,7 @@ export const ButtonInformation = styled.button`
 
   img {
     width: 0.86rem;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 768px) {

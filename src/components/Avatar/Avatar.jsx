@@ -1,6 +1,6 @@
-//import styles from "./Avatar.module.css"
+import { useEffect, useState } from "react"
+import { dataAPI } from "../../Service/Api"
 
-import { useState } from "react"
 import {
   ContainerAvatar,
   AvatarTitleSubtitle,
@@ -19,25 +19,40 @@ import {
 } from "./styles"
 
 export function Avatar() {
-  const [handleContentInformations, setHandleContentInformation] =
-    useState(false)
-  const contentInformation = () => setHandleContentInformation(true)
+  const [informations, setInformations] = useState([])
+  const [showContent, setShowContent] = useState(false)
+
+  const getDatas = async () => {
+    try {
+      const response = await dataAPI.get()
+      const data = response.data
+
+      setInformations(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getDatas()
+  }, [])
+
+  const toggleContent = () => {
+    setShowContent(!showContent)
+  }
 
   return (
     <ContainerAvatar>
       <AvatarTitleSubtitle>
-        <AvatarImg
-          src="../../src/assets/images/imageAvatar.svg"
-          alt="Imagem do Avatar"
-        />
+        <AvatarImg src={informations.avatar_url} alt="Imagem do Avatar" />
         <CircleIconAvatar>
           <img src="../../src/assets/icons/smiles.svg" alt="" />
         </CircleIconAvatar>
 
         <NameProfession>
           <ContainerNames>
-            <MyName>Renato Napoli</MyName>
-            <Profession>Desenvolvedor Front-end Pleno</Profession>
+            <MyName>{informations.name}</MyName>
+            <Profession>Desenvolvedor</Profession>
             <Locale>Magazord - Tagged</Locale>
           </ContainerNames>
         </NameProfession>
@@ -45,19 +60,19 @@ export function Avatar() {
       <Footer>
         <div>
           <Icons src="../../src/assets/icons/empresa.svg" alt="icone empresa" />
-          <span>Empresa</span>
+          <span>{informations.company || "Empresa"}</span>
         </div>
         <div>
           <Icons
             src="../../src/assets/icons/localidade.svg"
             alt="icone localidade"
           />
-          <span>Localidade</span>
+          <span>{informations.location}</span>
         </div>
         <div>
           <Icons src="../../src/assets/icons/link.svg" alt="icone link" />
           <span>
-            <a href="#">Link</a>
+            <a href={informations.blog}>{informations.blog}</a>
           </span>
         </div>
         <div>
@@ -71,38 +86,46 @@ export function Avatar() {
         </div>
       </Footer>
       <TitleInformation>Informações adicionais</TitleInformation>
-      <ButtonInformation onClick={contentInformation}>
-        <img src="../../src/assets/icons/seta-para-baixo-blue.svg" />
+      <ButtonInformation onClick={toggleContent}>
+        <img
+          src="../../src/assets/icons/seta-para-baixo-blue.svg"
+          style={{ transform: showContent ? "rotate(180deg)" : "rotate(0deg)" }}
+        />
       </ButtonInformation>
 
-      <ContentInformations>
-        <div>
-          <Icons src="../../src/assets/icons/empresa.svg" alt="icone empresa" />
-          <span>Empresa</span>
-        </div>
-        <div>
-          <Icons
-            src="../../src/assets/icons/localidade.svg"
-            alt="icone localidade"
-          />
-          <span>Localidade</span>
-        </div>
-        <div>
-          <Icons src="../../src/assets/icons/link.svg" alt="icone link" />
-          <span>
-            <a href="#">Link</a>
-          </span>
-        </div>
-        <div>
-          <Icons
-            src="../../src/assets/icons/instagram.svg"
-            alt="icone instagram"
-          />
-          <span>
-            <a href="#">Instagram</a>
-          </span>
-        </div>
-      </ContentInformations>
+      {showContent && (
+        <ContentInformations>
+          <div>
+            <Icons
+              src="../../src/assets/icons/empresa.svg"
+              alt="icone empresa"
+            />
+            <span>{informations.company || "Empresa"}</span>
+          </div>
+          <div>
+            <Icons
+              src="../../src/assets/icons/localidade.svg"
+              alt="icone localidade"
+            />
+            <span>{informations.location}</span>
+          </div>
+          <div>
+            <Icons src="../../src/assets/icons/link.svg" alt="icone link" />
+            <span>
+              <a href={informations.blog}>{informations.blog}</a>
+            </span>
+          </div>
+          <div>
+            <Icons
+              src="../../src/assets/icons/instagram.svg"
+              alt="icone instagram"
+            />
+            <span>
+              <a href="#">Instagram</a>
+            </span>
+          </div>
+        </ContentInformations>
+      )}
     </ContainerAvatar>
   )
 }
